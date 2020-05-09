@@ -8,6 +8,7 @@ CombatState.name = "CombatState"
 -- Next we create a function that will initialize our addon
 function CombatState:Initialize()
   self.inCombat = IsUnitInCombat("player")
+  EVENT_MANAGER:RegisterForEvent(self.name, EVENT_PLAYER_COMBAT_STATE,self.OnPlayerCombatState)
 end
  
 -- Function to change combat State
