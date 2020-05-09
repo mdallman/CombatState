@@ -7,7 +7,22 @@ CombatState.name = "CombatState"
  
 -- Next we create a function that will initialize our addon
 function CombatState:Initialize()
-  -- ...but we don't have anything to initialize yet. We'll come back to this.
+  self.inCombat = IsUnitInCombat("player")
+end
+ 
+-- Function to change combat State
+function CombatState.OnPlayerCombatState(event, inCombat)  
+  if inCombat ~= CombatState.inCombat then
+    -- Updates the state of the player
+    CombatState.inCombat = inCombat
+
+    -- annouce the change
+    if incombat then
+      d(">>> Entering Combat <<<")
+    else
+      d(">>> Exiting Combat <<<")
+    end
+  end
 end
  
 -- Then we create an event handler function which will be called when the "addon loaded" event
