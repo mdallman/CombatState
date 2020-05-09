@@ -1,0 +1,4 @@
+## Title: Combat State
+## APIVersion: 100003
+
+CombatState.lua
