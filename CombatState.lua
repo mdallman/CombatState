@@ -16,13 +16,8 @@ function CombatState.OnPlayerCombatState(event, inCombat)
   if inCombat ~= CombatState.inCombat then
     -- Updates the state of the player
     CombatState.inCombat = inCombat
-
+    CombatStateIndicator:SetHidden(not inCombat)
     -- annouce the change
-    if incombat then
-      d(">>> Entering Combat <<<")
-    else
-      d(">>> Exiting Combat <<<")
-    end
   end
 end
  
